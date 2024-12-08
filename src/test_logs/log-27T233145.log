@@ -1,0 +1,2 @@
+23:31:47.085 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 131.0.6778.85 (resolved driver for Chrome 131)
+23:31:47.163 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as C:\Users\ovash\.cache\selenium\chromedriver\win64\131.0.6778.85\chromedriver.exe

@@ -1,0 +1,97 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+    id 'com.github.ben-manes.versions' version '0.47.0'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.25.0'
+  //  implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.18.1'
+  //  implementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.18.1'
+    implementation group: 'com.codeborne', name: 'selenide', version: '7.5.1'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.9.2'
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+    testCompileOnly 'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+    implementation group: 'org.testng', name: 'testng', version: '7.10.2'
+   // implementation group: 'io.appium', name: 'java-client', version: '9.2.2'
+    // Для работы с REST API
+   // implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    implementation group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.5.14'
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.0'
+    // Парсит JSON в Java объекты и обратно
+   // implementation group: 'com.google.code.gson', name: 'gson', version: '2.11.0'
+    // Подключение к базам данных
+   // implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.9'
+    testImplementation 'io.qameta.allure:allure-testng:2.22.0'
+    testImplementation 'io.qameta.allure:allure-java-commons:2.22.0'
+}
+
+test {
+    useTestNG() {
+        listeners << 'io.qameta.allure.testng.AllureTestNg'
+    }
+}
+// Функция для регистрации задач TestNG
+def registerTask(String taskName, String suitePath){
+    tasks.register(taskName, Test){
+        useTestNG(){
+            suites suitePath
+        }
+        if(project.hasProperty('browser')){
+            systemProperty 'browser', "${browser}"
+        }
+        finalizedBy 'allureReport' // Запуск allureReport после завершения тестов
+    }
+}
+
+// Регистрация задач для запуска тестов с относительными путями
+//registerTask('smoke', 'src/test/resources/smoke.xml')
+//registerTask('regression', 'src/test/resources/regression.xml')
+//registerTask('accept', 'src/test/resources/accept.xml')
+//registerTask('login', 'src/test/resources/login.xml')
+
+// Задача для запуска Allure-сервера
+//tasks.register('allure') {
+//    dependsOn 'allureServe' // Запускает allureServe при выполнении задачи allure
+//}
+
+// Задача для копирования истории Allure
+//tasks.register('copyAllureHistory') {
+//    doLast {
+//        def allureReportDir = file("$buildDir/reports/allure-report")
+//        def allureResultsDir = file("$buildDir/allure-results")
+//
+//        def historyDir = new File(allureReportDir, "history")
+//        def resultsHistoryDir = new File(allureResultsDir, "history")
+//
+//        if (historyDir.exists()) {
+//            copy {
+//                from historyDir
+//                into resultsHistoryDir
+//            }
+//        }
+//    }
+//}
+
+// Задача AllureReport теперь зависит от copyAllureHistory
+//tasks.named('allureReport') {
+//    dependsOn 'copyAllureHistory' // Ensure this task runs before generating the report
+//}
+
+// Пример использования команд:
+// gradle allureReport — Генерация отчета Allure
+// gradle allureServe  — Просмотр отчета Allure
+// gradle smoke        — Запуск Smoke тестов
+// gradle regression   — Запуск Regression тестов
+// gradle accept       — Запуск Acceptance тестов
+// gradle login        — Запуск Login тестов
+
