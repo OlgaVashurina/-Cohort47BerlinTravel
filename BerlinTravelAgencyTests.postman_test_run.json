@@ -1,0 +1,1467 @@
+{
+	"id": "410fa001-d995-4355-b61e-be080e1b6712",
+	"name": "BerlinTravelAgencyTests",
+	"timestamp": "2024-12-08T22:31:58.488Z",
+	"collection_id": "37825421-78504373-e57f-4ec2-9c16-59989b1ba8d7",
+	"folder_id": 0,
+	"environment_id": "37825421-d060fd58-9a5e-4a75-930c-671edcd1d307",
+	"totalPass": 121,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-12-08T22:31:50.466Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "bcc78874-319c-4071-99ef-31e03129e9f5",
+			"name": "Create new user random",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/public/register",
+			"time": 248,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response time is less than 2000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				248
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response time is less than 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "9e72f1fb-2d0b-48c2-8672-54c48c5a4ee4",
+			"name": "Registering new user 1 steps",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/public/register",
+			"time": 135,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response status is 201 for successful registration": true
+			},
+			"testPassFailCounts": {
+				"Response status is 201 for successful registration": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				135
+			],
+			"allTests": [
+				{
+					"Response status is 201 for successful registration": true
+				}
+			]
+		},
+		{
+			"id": "a94dbdf0-a3dd-4c33-b15d-41450d08efbb",
+			"name": "User authorization",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/auth",
+			"time": 123,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Успешная авторизация": true,
+				"Проверка структуры JWT": true,
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Успешная авторизация": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка структуры JWT": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Успешная авторизация": true,
+					"Проверка структуры JWT": true,
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "5ff32dd8-0b4d-437c-8edc-a908b1266cbd",
+			"name": "admin authorization",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/auth",
+			"time": 120,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Успешная авторизация": true,
+				"Response status code is 200": true,
+				"Response has the required Content-Type header with value application/json": true,
+				"Token is present in the response": true,
+				"Token is a non-empty string": true,
+				"Token is in a valid format": true
+			},
+			"testPassFailCounts": {
+				"Успешная авторизация": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required Content-Type header with value application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Token is present in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Token is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Token is in a valid format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				120
+			],
+			"allTests": [
+				{
+					"Успешная авторизация": true,
+					"Response status code is 200": true,
+					"Response has the required Content-Type header with value application/json": true,
+					"Token is present in the response": true,
+					"Token is a non-empty string": true,
+					"Token is in a valid format": true
+				}
+			]
+		},
+		{
+			"id": "7fadac0c-6511-4445-a6fd-59e338286e04",
+			"name": "token",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/auth",
+			"time": 120,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Успешная авторизация": true,
+				"Код ответа 200": true,
+				"Формат токена (JWT)": true,
+				"Проверка payload токена": true,
+				"Сохранение токена в окружении": true,
+				"Время отклика меньше 1000 мс": true
+			},
+			"testPassFailCounts": {
+				"Успешная авторизация": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Код ответа 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Формат токена (JWT)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка payload токена": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Сохранение токена в окружении": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Время отклика меньше 1000 мс": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				120
+			],
+			"allTests": [
+				{
+					"Успешная авторизация": true,
+					"Код ответа 200": true,
+					"Формат токена (JWT)": true,
+					"Проверка payload токена": true,
+					"Сохранение токена в окружении": true,
+					"Время отклика меньше 1000 мс": true
+				}
+			]
+		},
+		{
+			"id": "1643cc54-6325-46d0-bded-9fceb1ad6698",
+			"name": "Chek Roll Admin",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/auth/me",
+			"time": 58,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Успешная авторизация": true,
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Email is in a valid format": true,
+				"First name and last name are non-empty strings": true
+			},
+			"testPassFailCounts": {
+				"Успешная авторизация": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Email is in a valid format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"First name and last name are non-empty strings": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				58
+			],
+			"allTests": [
+				{
+					"Успешная авторизация": true,
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Email is in a valid format": true,
+					"First name and last name are non-empty strings": true
+				}
+			]
+		},
+		{
+			"id": "a261d06f-c3d9-4590-9aad-2621941c1ad3",
+			"name": "Displaying all tours",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours",
+			"time": 191,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Успешный ответ": true,
+				"Структура ответа: список туров": true,
+				"Проверка данных первого тура": true
+			},
+			"testPassFailCounts": {
+				"Успешный ответ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Структура ответа: список туров": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка данных первого тура": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				191
+			],
+			"allTests": [
+				{
+					"Успешный ответ": true,
+					"Структура ответа: список туров": true,
+					"Проверка данных первого тура": true
+				}
+			]
+		},
+		{
+			"id": "bee04dcd-3476-4e14-be0d-18f604dfb2a4",
+			"name": "Displaying all tours Doubl all tours",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours/all",
+			"time": 193,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Успешный ответ": true,
+				"Структура ответа: список туров": true,
+				"Проверка данных первого тура": true
+			},
+			"testPassFailCounts": {
+				"Успешный ответ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Структура ответа: список туров": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Проверка данных первого тура": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				193
+			],
+			"allTests": [
+				{
+					"Успешный ответ": true,
+					"Структура ответа: список туров": true,
+					"Проверка данных первого тура": true
+				}
+			]
+		},
+		{
+			"id": "2fbe6b57-5b85-495f-8752-1d25b5436033",
+			"name": "Displaying ID tours",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours/5",
+			"time": 77,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Успешный ответ": true
+			},
+			"testPassFailCounts": {
+				"Успешный ответ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"Успешный ответ": true
+				}
+			]
+		},
+		{
+			"id": "14006806-6c98-4a6b-bb7f-1716eea9bc02",
+			"name": "Chenging the data hotels",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/admin/tours/3",
+			"time": 102,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Код ответа 200": true,
+				"Структура ответа корректна": true,
+				"Дата начала меньше даты окончания": true
+			},
+			"testPassFailCounts": {
+				"Код ответа 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Структура ответа корректна": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Дата начала меньше даты окончания": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				102
+			],
+			"allTests": [
+				{
+					"Код ответа 200": true,
+					"Структура ответа корректна": true,
+					"Дата начала меньше даты окончания": true
+				}
+			]
+		},
+		{
+			"id": "4c9cb416-44b0-459b-b63f-2f357bfbd415",
+			"name": "add tour",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/admin/tours",
+			"time": 59,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Ответ содержит все необходимые поля": true,
+				"Дата начала меньше даты окончания": true,
+				"Данные в ответе совпадают с запросом": true,
+				"Код ответа 201": true,
+				"Время отклика меньше 1000 мс": true,
+				"Валидные даты": true
+			},
+			"testPassFailCounts": {
+				"Ответ содержит все необходимые поля": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Дата начала меньше даты окончания": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Данные в ответе совпадают с запросом": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Код ответа 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Время отклика меньше 1000 мс": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Валидные даты": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				59
+			],
+			"allTests": [
+				{
+					"Ответ содержит все необходимые поля": true,
+					"Дата начала меньше даты окончания": true,
+					"Данные в ответе совпадают с запросом": true,
+					"Код ответа 201": true,
+					"Время отклика меньше 1000 мс": true,
+					"Валидные даты": true
+				}
+			]
+		},
+		{
+			"id": "04f0f845-4c09-4746-b8e0-84210a08834d",
+			"name": "admin all users",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/admin/users",
+			"time": 72,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields - id, firstName, lastName, email, and role": true,
+				"Email is in a valid format": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields - id, firstName, lastName, email, and role": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Email is in a valid format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				72
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields - id, firstName, lastName, email, and role": true,
+					"Email is in a valid format": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "4a5bb20a-a091-47bd-890d-7e2e70d0880a",
+			"name": "Ban",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/admin/ban?email=user3652@gmail.com",
+			"time": 87,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Токен действителен": true,
+				"Успешный бан пользователя": true,
+				"Пользователь не найден": true,
+				"Нет прав на выполнение действия": true
+			},
+			"testPassFailCounts": {
+				"Токен действителен": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Успешный бан пользователя": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Пользователь не найден": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Нет прав на выполнение действия": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				87
+			],
+			"allTests": [
+				{
+					"Токен действителен": true,
+					"Успешный бан пользователя": true,
+					"Пользователь не найден": true,
+					"Нет прав на выполнение действия": true
+				}
+			]
+		},
+		{
+			"id": "33623e87-84a4-423f-a80c-95bd007a0d20",
+			"name": "admin ID user",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/users/6",
+			"time": 63,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content type is application/json": true,
+				"Response has the required fields - id, firstName, lastName, email, and role": true,
+				"Email is in a valid format": true,
+				"First name and last name are non-empty strings": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields - id, firstName, lastName, email, and role": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Email is in a valid format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"First name and last name are non-empty strings": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				63
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content type is application/json": true,
+					"Response has the required fields - id, firstName, lastName, email, and role": true,
+					"Email is in a valid format": true,
+					"First name and last name are non-empty strings": true
+				}
+			]
+		},
+		{
+			"id": "44164be0-04d3-4d24-a893-2b888c3dea84",
+			"name": "tours?price=1000",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?price=1000",
+			"time": 273,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response Content-Type is application/json": true,
+				"Validate the tour object": true,
+				"Price is a non-negative integer": true,
+				"StartDate is in a valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the tour object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"StartDate is in a valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				273
+			],
+			"allTests": [
+				{
+					"Response Content-Type is application/json": true,
+					"Validate the tour object": true,
+					"Price is a non-negative integer": true,
+					"StartDate is in a valid date format": true
+				}
+			]
+		},
+		{
+			"id": "03554cdb-ba5c-4561-9624-f2d7697ac2f8",
+			"name": "tours?country=Germany",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?country=Germany",
+			"time": 130,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content-Type header is application/json": true,
+				"Tours array is present and contains expected number of elements": true,
+				"Id is a non-negative integer": true,
+				"Title is a non-empty string": true,
+				"Description is a non-empty string": true,
+				"Price is a non-negative number": true,
+				"Duration is a non-negative number": true,
+				"Start and end dates are in valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Tours array is present and contains expected number of elements": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Id is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Title is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Description is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duration is a non-negative number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Start and end dates are in valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				130
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content-Type header is application/json": true,
+					"Tours array is present and contains expected number of elements": true,
+					"Id is a non-negative integer": true,
+					"Title is a non-empty string": true,
+					"Description is a non-empty string": true,
+					"Price is a non-negative number": true,
+					"Duration is a non-negative number": true,
+					"Start and end dates are in valid date format": true
+				}
+			]
+		},
+		{
+			"id": "f5414a7d-73ad-4bbc-a0a4-a3f72942a86c",
+			"name": "tours?city=Berlin",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?city=Berlin",
+			"time": 187,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Price is a non-negative integer": true,
+				"StartDate and EndDate are in valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"StartDate and EndDate are in valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				187
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Price is a non-negative integer": true,
+					"StartDate and EndDate are in valid date format": true
+				}
+			]
+		},
+		{
+			"id": "2e2d28ba-7788-41b2-84c6-e6b20d280042",
+			"name": "minPrice=100&maxPrice=500",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?minPrice=100&maxPrice=500",
+			"time": 146,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content type is application/json": true,
+				"Validate the tour object": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the tour object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				146
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content type is application/json": true,
+					"Validate the tour object": true
+				}
+			]
+		},
+		{
+			"id": "25eb4d72-2792-4989-9fed-dc57291797df",
+			"name": "startDate=2024-12-09",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?startDate=2024-12-09",
+			"time": 83,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Price is a non-negative number": true,
+				"StartDate and endDate are in a valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"StartDate and endDate are in a valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				83
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Price is a non-negative number": true,
+					"StartDate and endDate are in a valid date format": true
+				}
+			]
+		},
+		{
+			"id": "878b1608-43c5-4608-8c7d-ad37ba832027",
+			"name": "endDate=2024-12-31",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?startDate=2024-12-01&endDate=2024-12-31",
+			"time": 88,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Price is a non-negative integer": true,
+				"PhotoLinks array is present and has expected number of elements": true,
+				"Start date and end date are in valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"PhotoLinks array is present and has expected number of elements": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Start date and end date are in valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				88
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Price is a non-negative integer": true,
+					"PhotoLinks array is present and has expected number of elements": true,
+					"Start date and end date are in valid date format": true
+				}
+			]
+		},
+		{
+			"id": "2698908e-6783-47a7-bbc7-fbbd2638d17b",
+			"name": "state=AVAILABLE",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?state=AVAILABLE",
+			"time": 162,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response Content-Type is application/json": true,
+				"Validate the tour object": true,
+				"Price is a non-negative integer": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the tour object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				162
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response Content-Type is application/json": true,
+					"Validate the tour object": true,
+					"Price is a non-negative integer": true
+				}
+			]
+		},
+		{
+			"id": "f7dcf5e7-07fb-4b05-8487-bea705fe670d",
+			"name": "minPrice=100&maxPrice=500",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?country=Italy&minPrice=100&maxPrice=500",
+			"time": 211,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Verify that startDate and endDate are in a valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that startDate and endDate are in a valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				211
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Verify that startDate and endDate are in a valid date format": true
+				}
+			]
+		},
+		{
+			"id": "4a70a556-fafd-4af7-92da-7f82cb44a002",
+			"name": "Date=2024-12-09&state=AVAILABLE",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?startDate=2024-12-09&state=AVAILABLE",
+			"time": 167,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Price is a non-negative number": true,
+				"StartDate and EndDate are in a valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"StartDate and EndDate are in a valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				167
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Price is a non-negative number": true,
+					"StartDate and EndDate are in a valid date format": true
+				}
+			]
+		},
+		{
+			"id": "378bfe10-cefe-48cf-b1f9-4ad8103ba05a",
+			"name": "page=1&size=10",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?page=1&size=10",
+			"time": 257,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Title is a non-empty string": true,
+				"Price is a non-negative integer": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Title is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				257
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Title is a non-empty string": true,
+					"Price is a non-negative integer": true
+				}
+			]
+		},
+		{
+			"id": "348c172e-7aae-4d25-8163-dd4c0da87a12",
+			"name": "sort=price,asc",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?sort=price,asc",
+			"time": 157,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Price is a non-negative number": true,
+				"Duration is a non-negative number": true,
+				"Start and end dates are in a valid date format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duration is a non-negative number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Start and end dates are in a valid date format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				157
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Price is a non-negative number": true,
+					"Duration is a non-negative number": true,
+					"Start and end dates are in a valid date format": true
+				}
+			]
+		},
+		{
+			"id": "bd51721a-8947-4d38-9ad3-4ff0a8823b41",
+			"name": "minDuration=5&maxDuration=10",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?minDuration=5&maxDuration=10",
+			"time": 151,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Price is a non-negative integer": true,
+				"Duration is a non-negative integer": true,
+				"PhotoLinks array is present and contains expected elements": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duration is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"PhotoLinks array is present and contains expected elements": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				151
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Price is a non-negative integer": true,
+					"Duration is a non-negative integer": true,
+					"PhotoLinks array is present and contains expected elements": true
+				}
+			]
+		},
+		{
+			"id": "c3ae5380-0877-46a9-a2e8-475566dceac1",
+			"name": "search=Dream",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?search=Dream",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Title is a non-empty string": true,
+				"Duration is a non-negative integer": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Title is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duration is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Title is a non-empty string": true,
+					"Duration is a non-negative integer": true
+				}
+			]
+		},
+		{
+			"id": "cd1c3350-3b5d-48b0-9656-ee6165d61a47",
+			"name": "Несуществующий фильтр",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?nonexistentField=value",
+			"time": 163,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Title is a non-empty string": true,
+				"Duration is a non-negative integer": true,
+				"PhotoLinks array is present and contains expected number of elements": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Title is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Duration is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"PhotoLinks array is present and contains expected number of elements": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				163
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Title is a non-empty string": true,
+					"Duration is a non-negative integer": true,
+					"PhotoLinks array is present and contains expected number of elements": true
+				}
+			]
+		},
+		{
+			"id": "d29bbf43-9ffa-45ed-9224-e252405d88ca",
+			"name": "Пересекающиеся фильтры",
+			"url": "https://lionfish-app-3k7kf.ondigitalocean.app/api/tours?minPrice=500&maxPrice=100",
+			"time": 158,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content type is application/json": true,
+				"Validate the tour object": true,
+				"Price is a non-negative integer": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the tour object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				158
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content type is application/json": true,
+					"Validate the tour object": true,
+					"Price is a non-negative integer": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4153,
+	"collection": {
+		"requests": [
+			{
+				"id": "bcc78874-319c-4071-99ef-31e03129e9f5",
+				"method": "POST"
+			},
+			{
+				"id": "9e72f1fb-2d0b-48c2-8672-54c48c5a4ee4",
+				"method": "POST"
+			},
+			{
+				"id": "a94dbdf0-a3dd-4c33-b15d-41450d08efbb",
+				"method": "POST"
+			},
+			{
+				"id": "5ff32dd8-0b4d-437c-8edc-a908b1266cbd",
+				"method": "POST"
+			},
+			{
+				"id": "7fadac0c-6511-4445-a6fd-59e338286e04",
+				"method": "POST"
+			},
+			{
+				"id": "1643cc54-6325-46d0-bded-9fceb1ad6698",
+				"method": "GET"
+			},
+			{
+				"id": "a261d06f-c3d9-4590-9aad-2621941c1ad3",
+				"method": "GET"
+			},
+			{
+				"id": "bee04dcd-3476-4e14-be0d-18f604dfb2a4",
+				"method": "GET"
+			},
+			{
+				"id": "2fbe6b57-5b85-495f-8752-1d25b5436033",
+				"method": "GET"
+			},
+			{
+				"id": "14006806-6c98-4a6b-bb7f-1716eea9bc02",
+				"method": "PUT"
+			},
+			{
+				"id": "4c9cb416-44b0-459b-b63f-2f357bfbd415",
+				"method": "POST"
+			},
+			{
+				"id": "04f0f845-4c09-4746-b8e0-84210a08834d",
+				"method": "GET"
+			},
+			{
+				"id": "4a5bb20a-a091-47bd-890d-7e2e70d0880a",
+				"method": "PUT"
+			},
+			{
+				"id": "33623e87-84a4-423f-a80c-95bd007a0d20",
+				"method": "GET"
+			},
+			{
+				"id": "44164be0-04d3-4d24-a893-2b888c3dea84",
+				"method": "GET"
+			},
+			{
+				"id": "03554cdb-ba5c-4561-9624-f2d7697ac2f8",
+				"method": "GET"
+			},
+			{
+				"id": "f5414a7d-73ad-4bbc-a0a4-a3f72942a86c",
+				"method": "GET"
+			},
+			{
+				"id": "2e2d28ba-7788-41b2-84c6-e6b20d280042",
+				"method": "GET"
+			},
+			{
+				"id": "25eb4d72-2792-4989-9fed-dc57291797df",
+				"method": "GET"
+			},
+			{
+				"id": "878b1608-43c5-4608-8c7d-ad37ba832027",
+				"method": "GET"
+			},
+			{
+				"id": "2698908e-6783-47a7-bbc7-fbbd2638d17b",
+				"method": "GET"
+			},
+			{
+				"id": "f7dcf5e7-07fb-4b05-8487-bea705fe670d",
+				"method": "GET"
+			},
+			{
+				"id": "4a70a556-fafd-4af7-92da-7f82cb44a002",
+				"method": "GET"
+			},
+			{
+				"id": "378bfe10-cefe-48cf-b1f9-4ad8103ba05a",
+				"method": "GET"
+			},
+			{
+				"id": "348c172e-7aae-4d25-8163-dd4c0da87a12",
+				"method": "GET"
+			},
+			{
+				"id": "bd51721a-8947-4d38-9ad3-4ff0a8823b41",
+				"method": "GET"
+			},
+			{
+				"id": "c3ae5380-0877-46a9-a2e8-475566dceac1",
+				"method": "GET"
+			},
+			{
+				"id": "cd1c3350-3b5d-48b0-9656-ee6165d61a47",
+				"method": "GET"
+			},
+			{
+				"id": "d29bbf43-9ffa-45ed-9224-e252405d88ca",
+				"method": "GET"
+			}
+		]
+	}
+}

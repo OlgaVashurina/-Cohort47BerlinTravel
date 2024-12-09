@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "78504373-e57f-4ec2-9c16-59989b1ba8d7",
 		"name": "BerlinTravelAgencyTests",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "37825421",
 		"_collection_link": "https://cohort47.postman.co/workspace/QA~9c35c612-014c-45fb-b58b-79b23a58a5b1/collection/37825421-78504373-e57f-4ec2-9c16-59989b1ba8d7?action=share&source=collection_link&creator=37825421"
 	},
@@ -62,17 +62,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{base_url}}/api/public/register",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"api",
-										"public",
-										"register"
-									]
-								}
+								"url": "{{base_url}}/api/public/register"
 							},
 							"response": []
 						}
@@ -122,13 +112,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "POST",
 								"header": [
@@ -147,17 +133,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{base_url}}/api/public/register",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"api",
-										"public",
-										"register"
-									]
-								}
+								"url": "{{base_url}}/api/public/register"
 							},
 							"response": []
 						}
@@ -273,16 +249,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{base_url}}/api/auth",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"api",
-										"auth"
-									]
-								}
+								"url": "{{base_url}}/api/auth"
 							},
 							"response": []
 						},
@@ -340,13 +307,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "POST",
 								"header": [
@@ -365,16 +328,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{base_url}}/api/auth",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"api",
-										"auth"
-									]
-								}
+								"url": "{{base_url}}/api/auth"
 							},
 							"response": []
 						},
@@ -454,13 +408,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "POST",
 								"header": [
@@ -479,16 +429,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{base_url}}/api/auth",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"api",
-										"auth"
-									]
-								}
+								"url": "{{base_url}}/api/auth"
 							},
 							"response": []
 						},
@@ -544,13 +485,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [
@@ -560,30 +497,16 @@
 										"type": "text"
 									}
 								],
-								"url": {
-									"raw": "{{base_url}}/api/auth/me",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"api",
-										"auth",
-										"me"
-									]
-								}
+								"url": "{{base_url}}/api/auth/me"
 							},
 							"response": []
 						}
 					],
 					"auth": {
 						"type": "bearer",
-						"bearer": [
-							{
-								"key": "token",
-								"value": "{{tokenAdmin}}",
-								"type": "string"
-							}
-						]
+						"bearer": {
+							"token": "{{tokenAdmin}}"
+						}
 					},
 					"event": [
 						{
@@ -739,16 +662,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/tours",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"tours"
-							]
-						}
+						"url": "{{base_url}}/api/tours"
 					},
 					"response": []
 				},
@@ -825,27 +739,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb3MxQGdtYWlsLmNvbSIsImlhdCI6MTczMjgzNTQ4MCwiZXhwIjoxNzMyODQ1NDgwfQ.0yxP77zRDhgW4YL2Y3CwWd-en1BnXFi7eCJY6YFYens",
-									"type": "string"
-								}
-							]
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb3MxQGdtYWlsLmNvbSIsImlhdCI6MTczMjgzNTQ4MCwiZXhwIjoxNzMyODQ1NDgwfQ.0yxP77zRDhgW4YL2Y3CwWd-en1BnXFi7eCJY6YFYens"
+							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/tours/all",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"tours",
-								"all"
-							]
-						}
+						"url": "{{base_url}}/api/tours/all"
 					},
 					"response": []
 				},
@@ -879,17 +779,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/tours/5",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"tours",
-								"5"
-							]
-						}
+						"url": "{{base_url}}/api/tours/5"
 					},
 					"response": []
 				},
@@ -958,18 +848,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base_url}}/api/admin/tours/3",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"tours",
-								"3"
-							]
-						}
+						"url": "{{base_url}}/api/admin/tours/3"
 					},
 					"response": []
 				},
@@ -1134,30 +1013,16 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{base_url}}/api/admin/tours",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"tours"
-							]
-						}
+						"url": "{{base_url}}/api/admin/tours"
 					},
 					"response": []
 				}
 			],
 			"auth": {
 				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "{{tokenAdmin}}",
-						"type": "string"
-					}
-				]
+				"bearer": {
+					"token": "{{tokenAdmin}}"
+				}
 			},
 			"event": [
 				{
@@ -1234,17 +1099,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{base_url}}/api/admin/users",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"admin",
-								"users"
-							]
-						}
+						"url": "{{base_url}}/api/admin/users"
 					},
 					"response": []
 				},
@@ -1437,30 +1292,16 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "{{base_url}}/api/users/6",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"6"
-							]
-						}
+						"url": "{{base_url}}/api/users/6"
 					},
 					"response": []
 				}
 			],
 			"auth": {
 				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "{{tokenAdmin}}",
-						"type": "string"
-					}
-				]
+				"bearer": {
+					"token": "{{tokenAdmin}}"
+				}
 			},
 			"event": [
 				{
@@ -1556,13 +1397,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -1682,13 +1519,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -1774,13 +1607,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -1855,13 +1684,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -1941,13 +1766,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2052,13 +1873,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2144,13 +1961,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2229,13 +2042,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2320,13 +2129,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2414,13 +2219,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2524,13 +2325,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2623,13 +2420,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2717,13 +2510,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2819,13 +2608,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -2907,13 +2692,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{tokenAdmin}}",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "{{tokenAdmin}}"
+									}
 								},
 								"method": "GET",
 								"header": [],
