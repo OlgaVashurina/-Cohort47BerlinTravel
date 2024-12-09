@@ -1,14 +1,16 @@
 trigger:
-  - main  # Запуск конвейера при изменениях в ветке main
+  - main  # Запуск конвейера при изменении ветки main
 
 pool:
   vmImage: 'ubuntu-latest'  # Используем виртуальную машину Ubuntu
 
 steps:
   # Установка Node.js
-  - task: UseNode@2
-    inputs:
-      versionSpec: '16.x'
+  - script: |
+      curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      sudo apt-get install -y nodejs
+      node -v
+      npm -v
     displayName: 'Install Node.js'
 
   # Установка Newman для выполнения тестов Postman
@@ -25,7 +27,7 @@ steps:
         --reporter-junit-export postman-tests/newman-results.xml
     displayName: 'Run Postman API tests and generate reports'
 
-  # Публикация результатов Newman
+  # Публикация JUnit-результатов Newman
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
@@ -33,27 +35,10 @@ steps:
       failTaskOnFailedTests: true
     displayName: 'Publish Newman Test Results'
 
-  # Установка Allure для обработки отчетов
-  - script: |
-      npm install -g allure-commandline
-    displayName: 'Install Allure CLI'
-
-  # Генерация Allure-отчета
-  - script: |
-      allure generate build/allure-results -o build/allure-report || true
-    displayName: 'Generate Allure Report'
-
-  # Публикация Allure и Newman отчетов как артефактов
+  # Публикация HTML-отчета Newman как артефакта
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: 'postman-tests/newman-report.html'
       artifact: 'Newman Report'
       publishLocation: 'pipeline'
     displayName: 'Publish Newman HTML Report'
-
-  - task: PublishPipelineArtifact@1
-    inputs:
-      targetPath: 'build/allure-report'
-      artifact: 'Allure Report'
-      publishLocation: 'pipeline'
-    displayName: 'Publish Allure Report'
