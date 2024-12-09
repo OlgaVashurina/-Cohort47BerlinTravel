@@ -1,14 +1,10 @@
 trigger:
-  - main  # Запуск конвейера при изменениях в ветке main
+  - main  # Запуск конвейера при изменении ветки main
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  # Явный шаг для клонирования репозитория
-  - checkout: self
-    fetchDepth: 1  # Извлечение только последнего коммита
-
   # Установка Node.js
   - script: |
       curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
@@ -17,23 +13,32 @@ steps:
       npm -v
     displayName: 'Install Node.js'
 
-  # Установка Newman
+  # Установка Newman и репортёров
   - script: |
-      npm install -g newman
-    displayName: 'Install Newman'
+      npm install -g newman newman-reporter-html newman-reporter-allure
+    displayName: 'Install Newman and Reporters'
 
-  # Запуск Postman коллекции
+  # Запуск Postman коллекции с генерацией отчётов
   - script: |
       newman run postman-tests/BerlinTravelAgencyTests.postman_collection.json \
         -e postman-tests/BerlinTravelAgentcy.postman_environment.json \
-        --reporters cli,html \
-        --reporter-html-export postman-tests/newman-report.html
-    displayName: 'Run Postman Collection'
+        --reporters cli,html,allure \
+        --reporter-html-export postman-tests/newman-report.html \
+        --reporter-allure-export postman-tests/allure-results
+    displayName: 'Run Postman Collection and Generate Reports'
 
   # Публикация HTML-отчёта Newman как артефакта
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: 'postman-tests/newman-report.html'
-      artifact: 'Newman Report'
+      artifact: 'Newman HTML Report'
       publishLocation: 'pipeline'
-    displayName: 'Publish Newman Report'
+    displayName: 'Publish Newman HTML Report'
+
+  # Публикация Allure-отчёта как артефакта
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'postman-tests/allure-results'
+      artifact: 'Allure Results'
+      publishLocation: 'pipeline'
+    displayName: 'Publish Allure Report'
