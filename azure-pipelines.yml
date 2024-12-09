@@ -5,6 +5,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  # Явный шаг для клонирования репозитория
+  - checkout: self
+    fetchDepth: 0  # Полное клонирование без ограничения глубины
+
   # Установка Node.js
   - script: |
       curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
@@ -18,14 +22,14 @@ steps:
       npm install -g newman newman-reporter-html newman-reporter-allure
     displayName: 'Install Newman and Reporters'
 
-  # Запуск Postman коллекции с генерацией отчётов
+  # Запуск Postman коллекции
   - script: |
       newman run postman-tests/BerlinTravelAgencyTests.postman_collection.json \
         -e postman-tests/BerlinTravelAgentcy.postman_environment.json \
         --reporters cli,html,allure \
         --reporter-html-export postman-tests/newman-report.html \
         --reporter-allure-export postman-tests/allure-results
-    displayName: 'Run Postman Collection and Generate Reports'
+    displayName: 'Run Postman Collection'
 
   # Публикация HTML-отчёта Newman как артефакта
   - task: PublishPipelineArtifact@1
